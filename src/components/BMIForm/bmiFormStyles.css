@@ -1,0 +1,107 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.fieldsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.inputField {
+    flex: 1;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.inputField input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+}
+
+.inputField label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formTitle {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bmiValue {
+    position: relative;
+    display: inline-block;
+}
+
+.bmiValue::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: #000; 
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.bmiValue:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+.typingEffect {
+    border-right: .1em solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+}
